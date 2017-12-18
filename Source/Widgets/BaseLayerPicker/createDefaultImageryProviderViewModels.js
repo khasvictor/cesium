@@ -6,7 +6,8 @@ define([
         '../../Scene/createOpenStreetMapImageryProvider',
         '../../Scene/createTileMapServiceImageryProvider',
         '../../Scene/MapboxImageryProvider',
-        '../BaseLayerPicker/ProviderViewModel'
+        '../BaseLayerPicker/ProviderViewModel',
+        '../../Scene/WebMapTileServiceImageryProvider'
     ], function(
         buildModuleUrl,
         ArcGisMapServerImageryProvider,
@@ -15,7 +16,8 @@ define([
         createOpenStreetMapImageryProvider,
         createTileMapServiceImageryProvider,
         MapboxImageryProvider,
-        ProviderViewModel) {
+        ProviderViewModel,
+        WebMapTileServiceImageryProvider) {
     'use strict';
 
     /**
@@ -23,6 +25,54 @@ define([
      */
     function createDefaultImageryProviderViewModels() {
         var providerViewModels = [];
+
+        providerViewModels.push(new ProviderViewModel({
+            name : '天地图全球矢量',
+            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
+            tooltip : '天地图全球矢量',
+            creationFunction : function() {
+                return new WebMapTileServiceImageryProvider({
+                    url: 'http://t0.tianditu.com/vec_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=vec&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles',
+                    layer: 'vec',//'tdtVecBasicLayer',
+                    style: 'default',
+                    format: 'image/jpeg',
+                    tileMatrixSetID: 'GoogleMapsCompatible',
+                    show: false
+                });
+            }
+        }));
+
+        providerViewModels.push(new ProviderViewModel({
+            name : '天地图全球影像',
+            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
+            tooltip : '天地图全球影像',
+            creationFunction : function() {
+                return new WebMapTileServiceImageryProvider({
+                    url: 'http://t0.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles',
+                    layer: 'img',
+                    style: 'default',
+                    format: 'image/jpeg',
+                    tileMatrixSetID: 'GoogleMapsCompatible',
+                    show: false
+                });
+            }
+        }));
+        providerViewModels.push(new ProviderViewModel({
+            name : '天地图全球地形晕渲',
+            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
+            tooltip : '天地图全球地形晕渲',
+            creationFunction : function() {
+                return new WebMapTileServiceImageryProvider({
+                    url: 'http://t0.tianditu.com/ter_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=ter&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles',
+                    layer: 'ter',
+                    style: 'default',
+                    format: 'image/jpeg',
+                    tileMatrixSetID: 'GoogleMapsCompatible',
+                    show: false
+                });
+            }
+        }));
+
         providerViewModels.push(new ProviderViewModel({
             name : 'Bing Maps Aerial',
             iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/bingAerial.png'),

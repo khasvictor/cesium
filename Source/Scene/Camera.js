@@ -253,7 +253,7 @@ define([
      * The default rectangle the camera will view on creation.
      * @type Rectangle
      */
-    Camera.DEFAULT_VIEW_RECTANGLE = Rectangle.fromDegrees(-95.0, -20.0, -70.0, 90.0);
+    Camera.DEFAULT_VIEW_RECTANGLE = Rectangle.fromDegrees(73.0, 3.0, 135.0, 53.0);
 
     /**
      * A scalar to multiply to the camera position and add it back after setting the camera to view the rectangle.
