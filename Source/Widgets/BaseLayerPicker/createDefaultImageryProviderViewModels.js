@@ -7,7 +7,8 @@ define([
         '../../Scene/createTileMapServiceImageryProvider',
         '../../Scene/MapboxImageryProvider',
         '../BaseLayerPicker/ProviderViewModel',
-        '../../Scene/WebMapTileServiceImageryProvider'
+        '../../Scene/WebMapTileServiceImageryProvider',
+        '../../Scene/UrlTemplateImageryProvider'
     ], function(
         buildModuleUrl,
         ArcGisMapServerImageryProvider,
@@ -17,7 +18,8 @@ define([
         createTileMapServiceImageryProvider,
         MapboxImageryProvider,
         ProviderViewModel,
-        WebMapTileServiceImageryProvider) {
+        WebMapTileServiceImageryProvider,
+        UrlTemplateImageryProvider) {
     'use strict';
 
     /**
@@ -69,6 +71,18 @@ define([
                     format: 'image/jpeg',
                     tileMatrixSetID: 'GoogleMapsCompatible',
                     show: false
+                });
+            }
+        }));
+
+        providerViewModels.push(new ProviderViewModel({
+            name : 'UV测试',
+            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
+            tooltip : 'UV测试',
+            creationFunction : function() {
+                return new UrlTemplateImageryProvider({
+                    url : '/Apps/img/uv.jpg',
+                    flipXY : true
                 });
             }
         }));
