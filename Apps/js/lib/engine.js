@@ -1,6 +1,5 @@
-define('Engine',['when'],function(when) {
+define('engine',['Cesium','ThirdParty/when'],function(Cesium,when) {
         'use strict';
-
         function Engine(container)
         {
             this._viewer = new Cesium.Viewer(container, {
@@ -9,7 +8,7 @@ define('Engine',['when'],function(when) {
                 shadows: false,
                 terrainShadows: Cesium.ShadowMode.ENABLED
             });
-            this._readyPromise = when.defer();
+
         }
 
         Engine.prototype.getViewer=function()

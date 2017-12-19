@@ -1,15 +1,22 @@
 require.config({
+    baseUrl: '../../../Source',
     paths: {
-        'cesium': '../../Build/CesiumUnminified/Cesium'
+        'engine': '../../Apps/js/lib/engine',
+        'jquery': '../../Apps/js/lib/third_party/jquery-3.2.1.slim.min'
     }
 });
 
-require(['Engine'], function(Engine) {
+require(['engine','Cesium','jquery'], function(Engine,Cesium,$) {
     'use strict';
 
     var engine =new Engine('cesiumContainer');
 
     var viewer=engine.getViewer();
+
+    viewer.scene.debugShowFramesPerSecond=true;
+
+    //viewer.scene.debugShowFrustumPlanes = true;
+
 
     var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
         url : 'http://localhost/Production_4/Scene/Production_4.json'
