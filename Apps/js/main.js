@@ -1,6 +1,12 @@
+require.config({
+    paths: {
+        'cesium': '../../Build/CesiumUnminified/Cesium'
+    }
+});
 
-(function(){
+require(['cesium'], function(cesium) {
     'use strict';
+
     var viewer = new Cesium.Viewer('cesiumContainer', {
         infoBox: true,
         selectionIndicator: true,
@@ -34,4 +40,4 @@
     //         material: Cesium.Color.BLUE
     //     }
     // });
-})();
+});
