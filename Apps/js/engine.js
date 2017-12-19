@@ -1,24 +1,22 @@
-define('Engine',['cesium'],function(cesium) {
+define('Engine',['when'],function(when) {
         'use strict';
-        var viewer = new Cesium.Viewer('cesiumContainer', {
-            infoBox: true,
-            selectionIndicator: true,
-            shadows: true,
-            terrainShadows: Cesium.ShadowMode.ENABLED
-        });
-        // function Engine()
-        // {
 
-        // }
-        // Engine.prototype.Load=function()
-        // {
-        //     var viewer = new Cesium.Viewer('cesiumContainer', {
-        //         infoBox: true,
-        //         selectionIndicator: true,
-        //         shadows: true,
-        //         terrainShadows: Cesium.ShadowMode.ENABLED
-        //     });
-        // };
-        // return Engine;
+        function Engine(container)
+        {
+            this._viewer = new Cesium.Viewer(container, {
+                infoBox: true,
+                selectionIndicator: true,
+                shadows: false,
+                terrainShadows: Cesium.ShadowMode.ENABLED
+            });
+            this._readyPromise = when.defer();
+        }
+
+        Engine.prototype.getViewer=function()
+        {
+            return this._viewer;
+        };
+
+        return Engine;
    }
 );

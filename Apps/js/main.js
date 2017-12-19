@@ -4,15 +4,31 @@ require.config({
     }
 });
 
-require(['cesium'], function(cesium) {
+require(['Engine'], function(Engine) {
     'use strict';
 
-    var viewer = new Cesium.Viewer('cesiumContainer', {
-        infoBox: true,
-        selectionIndicator: true,
-        shadows: true,
-        terrainShadows: Cesium.ShadowMode.ENABLED
+    var engine =new Engine('cesiumContainer');
+
+    var viewer=engine.getViewer();
+
+    var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+        url : 'http://localhost/Production_4/Scene/Production_4.json'
+    }));
+
+    tileset.readyPromise.then(function() {
+        var boundingSphere = tileset.boundingSphere;
+        viewer.camera.flyToBoundingSphere(boundingSphere);
+        viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+    }).otherwise(function(error) {
+        throw(error);
     });
+
+    // var viewer = new Cesium.Viewer('cesiumContainer', {
+    //     infoBox: true,
+    //     selectionIndicator: true,
+    //     shadows: true,
+    //     terrainShadows: Cesium.ShadowMode.ENABLED
+    // });
 
     //var shadowMap = viewer.shadowMap;
     // shadowMap.maxmimumDistance = 100.0;
