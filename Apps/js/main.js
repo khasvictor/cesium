@@ -1,12 +1,15 @@
 require.config({
     baseUrl: '../../../Source',
     paths: {
-        'engine': '../../Apps/js/lib/engine',
-        'jquery': '../../Apps/js/lib/third_party/jquery-3.2.1.slim.min'
-    }
+        'Engine': '../../Apps/js/lib/engine',
+        'BaseObj': '../../Apps/js/lib/baseObj',
+        'LocationPickTool': '../../Apps/js/lib/tools/locationPickTool/locationPickTool',
+        'jquery': '../../Apps/js/lib/third_party/jquery-3.2.1.slim.min',
+        'ko':'./ThirdParty/knockout-3.4.2'
+    },
 });
 
-require(['engine','Cesium','jquery'], function(Engine,Cesium,$) {
+require(['Engine','Cesium','jquery'], function(Engine,Cesium,$) {
     'use strict';
 
     var engine =new Engine('cesiumContainer');
@@ -14,9 +17,6 @@ require(['engine','Cesium','jquery'], function(Engine,Cesium,$) {
     var viewer=engine.getViewer();
 
     viewer.scene.debugShowFramesPerSecond=true;
-
-    //viewer.scene.debugShowFrustumPlanes = true;
-
 
     var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
         url : 'http://localhost/Production_4/Scene/Production_4.json'
@@ -29,21 +29,6 @@ require(['engine','Cesium','jquery'], function(Engine,Cesium,$) {
     }).otherwise(function(error) {
         throw(error);
     });
-
-    // var viewer = new Cesium.Viewer('cesiumContainer', {
-    //     infoBox: true,
-    //     selectionIndicator: true,
-    //     shadows: true,
-    //     terrainShadows: Cesium.ShadowMode.ENABLED
-    // });
-
-    //var shadowMap = viewer.shadowMap;
-    // shadowMap.maxmimumDistance = 100.0;
-    // shadowMap.softShadows = false;
-    //shadowMap.size = 512;
-
-    // viewer.extend(Cesium.viewerCesiumInspectorMixin);
-    // viewer.extend(Cesium.viewerCesium3DTilesInspectorMixin);
 
     // var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
     //     url: 'http://localhost/tileset/tileset.json'

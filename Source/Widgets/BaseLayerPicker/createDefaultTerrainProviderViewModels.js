@@ -2,11 +2,13 @@ define([
         '../../Core/buildModuleUrl',
         '../../Core/CesiumTerrainProvider',
         '../../Core/EllipsoidTerrainProvider',
+        '../../Core/VRTheWorldTerrainProvider',
         '../BaseLayerPicker/ProviderViewModel'
     ], function(
         buildModuleUrl,
         CesiumTerrainProvider,
         EllipsoidTerrainProvider,
+        VRTheWorldTerrainProvider,
         ProviderViewModel) {
     'use strict';
 
@@ -37,6 +39,20 @@ define([
                 });
             }
         }));
+
+
+        providerViewModels.push(new ProviderViewModel({
+            name : 'Terrain data courtesy VT MÄK',
+            iconUrl : buildModuleUrl('Widgets/Images/TerrainProviders/Ellipsoid.png'),
+            tooltip : 'Terrain data courtesy VT MÄK',
+            creationFunction : function() {
+                return new VRTheWorldTerrainProvider({
+                    url : 'http://www.vr-theworld.com/vr-theworld/tiles1.0.0/73/',
+                    credit : 'Terrain data courtesy VT MÄK'
+                });
+            }
+        }));
+
 
         return providerViewModels;
     }
