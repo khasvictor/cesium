@@ -14,10 +14,10 @@ define('LocationPickTool', ['Cesium', 'BaseObj', 'jquery', 'ko'], function(Cesiu
         var _callback = callback;
 
         self.pickSinglePoint = function(movement) {
-            var type="move";
+            var type='移动';
             var pos = movement.endPosition;
             if (!pos) {
-                type="up";
+                type='抬起';
                 pos = movement.position;
             }
 
@@ -32,15 +32,16 @@ define('LocationPickTool', ['Cesium', 'BaseObj', 'jquery', 'ko'], function(Cesiu
             }
             if (cartesian) {
                 var cartographic = Cesium.Cartographic.fromCartesian(cartesian);
-                var longitude = Cesium.Math.toDegrees(cartographic.longitude);
-                var latitude = Cesium.Math.toDegrees(cartographic.latitude);
-                var altitude = cartographic.height;
+                var longitude = Cesium.Math.toDegrees(cartographic.longitude).toFixed(6);
+                var latitude = Cesium.Math.toDegrees(cartographic.latitude).toFixed(6);
+                var altitude = cartographic.height.toFixed(2);
                 result = {
                     type:type,
                     lon: longitude,
                     lat: latitude,
                     alt: altitude
                 };
+                self.Log(type+'_'+longitude+'_'+latitude+'_'+altitude);
             }
             if (_callback) {
                 _callback(result);
@@ -64,6 +65,7 @@ define('LocationPickTool', ['Cesium', 'BaseObj', 'jquery', 'ko'], function(Cesiu
         };
 
         self.isEnabled = ko.observable(false);
+        self.Log = ko.observable('');
 
         self.toggleLocationPick = function() {
             var enabled = !self.isEnabled();
@@ -76,7 +78,7 @@ define('LocationPickTool', ['Cesium', 'BaseObj', 'jquery', 'ko'], function(Cesiu
         };
 
         var id = self.getId();
-        $(domRoot).append('<button id="' + id + '" type="button" class="btn btn-primary" data-bind="css:{active: isEnabled()}, click: toggleLocationPick">位置拾取</button>');
+        $(domRoot).append('<div id="' + id + '"><button type="button" class="btn btn-primary" data-bind="css:{active: isEnabled()}, click: toggleLocationPick">位置拾取</button><div data-bind="css:{collapse: !isEnabled()}"><div class="card card-body" data-bind="text: Log()"></div></div></div>');
 
         // var ViewModel = function() {
         //     self.status = ko.observable(false);
@@ -106,7 +108,7 @@ define('LocationPickTool', ['Cesium', 'BaseObj', 'jquery', 'ko'], function(Cesiu
         //     }
         // };
 
-        ko.applyBindings(self, $('#' + id)[0]);
+        ko.applyBindings(self, $(domRoot).find('#' + id)[0]);
     }
 
     LocationPickTool.prototype.Enable = function(callback) {

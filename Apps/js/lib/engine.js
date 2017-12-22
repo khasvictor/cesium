@@ -11,15 +11,13 @@ define('Engine', ['Cesium', 'LocationPickTool', 'BaseObj', 'jquery', 'ThirdParty
             cesiumInspector: true
         });
 
-        var locationPickTool = new LocationPickTool(this, $(".cesium-viewer-toolbar")[0], function(xy) {
+        var locationPickTool = new LocationPickTool(this, $('#tool-bar')[0], function(xy) {
             console.log('1:' + xy.type);
         });
-
+        var locationPickTool2 = new LocationPickTool(this, $('#tool-bar')[0], function(xy) {
+            console.log('2:' + xy.type);
+        });
         console.log(locationPickTool.toString());
-        // $('.cesium-viewer-toolbar').append('<button id="test" type="button" class="btn" data-bind="click: toggleLocationPick">测试</button>');
-        // $('#test').on('click', function() {
-        //     locationPickTool.Disable();
-        // });
 
 
     }
