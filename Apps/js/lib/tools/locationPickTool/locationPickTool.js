@@ -1,23 +1,22 @@
 define('LocationPickTool', ['Cesium', 'BaseObj', 'jquery', 'ko'], function(Cesium, BaseObj, $, ko) {
     'use strict';
-    LocationPickTool.prototype = new BaseObj({});
-    LocationPickTool.prototype.constructor = LocationPickTool;
-    LocationPickTool.prototype.parent = BaseObj.prototype;
+    LocationPickTool.prototype = Object.create(BaseObj.prototype);//new BaseObj({});
+    // LocationPickTool.prototype.constructor = LocationPickTool;
+    // LocationPickTool.prototype.parent = BaseObj.prototype;
 
     function LocationPickTool(engine, domRoot, callback, options) {
+        BaseObj.call(this,options);
         var self = this;
-        self.init(options);
         var _engine = engine;
         var _viewer = engine.getViewer();
         var _handler = new Cesium.ScreenSpaceEventHandler(_viewer.scene.canvas);
-
         var _callback = callback;
 
         self.pickSinglePoint = function(movement) {
-            var type='移动';
+            var type='move';
             var pos = movement.endPosition;
             if (!pos) {
-                type='抬起';
+                type='click';
                 pos = movement.position;
             }
 
@@ -44,7 +43,7 @@ define('LocationPickTool', ['Cesium', 'BaseObj', 'jquery', 'ko'], function(Cesiu
                 self.Log(type+'_'+longitude+'_'+latitude+'_'+altitude);
             }
             if (_callback) {
-                _callback(result);
+                self.onUpdate(_callback,result);
             }
             return result;
         };
@@ -54,31 +53,31 @@ define('LocationPickTool', ['Cesium', 'BaseObj', 'jquery', 'ko'], function(Cesiu
                 _callback = callback;
             }
             _handler.setInputAction(self.pickSinglePoint, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
-            _handler.setInputAction(self.pickSinglePoint, Cesium.ScreenSpaceEventType.LEFT_UP);
+            _handler.setInputAction(self.pickSinglePoint, Cesium.ScreenSpaceEventType.LEFT_CLICK);
             self.isEnabled(true);
         };
 
         self.disable = function() {
             _handler.removeInputAction(Cesium.ScreenSpaceEventType.MOUSE_MOVE);
-            _handler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_UP);
+            _handler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK);
             self.isEnabled(false);
         };
 
-        self.isEnabled = ko.observable(false);
-        self.Log = ko.observable('');
-
-        self.toggleLocationPick = function() {
-            var enabled = !self.isEnabled();
-            if (enabled) {
-                self.enable();
-            } else {
-                self.disable();
-            }
-            self.isEnabled(enabled);
-        };
-
-        var id = self.getId();
-        $(domRoot).append('<div id="' + id + '"><button type="button" class="btn btn-primary" data-bind="css:{active: isEnabled()}, click: toggleLocationPick">位置拾取</button><div data-bind="css:{collapse: !isEnabled()}"><div class="card card-body" data-bind="text: Log()"></div></div></div>');
+        // self.isEnabled = ko.observable(false);
+        // self.Log = ko.observable('');
+        // self.toggleLocationPick = function() {
+        //     var enabled = !self.isEnabled();
+        //     if (enabled) {
+        //         self.enable();
+        //     } else {
+        //         self.disable();
+        //     }
+        //     self.isEnabled(enabled);
+        // };
+        // var id = self.getId();
+        // var html= self.getHtml(id);
+        // $(domRoot).append(html);
+        // ko.applyBindings(self, $(domRoot).find('#' + id)[0]);
 
         // var ViewModel = function() {
         //     self.status = ko.observable(false);
@@ -107,9 +106,37 @@ define('LocationPickTool', ['Cesium', 'BaseObj', 'jquery', 'ko'], function(Cesiu
         //         self.status(enabled);
         //     }
         // };
+        // self.BindUI(domRoot);
 
+        self.BindUI(self,domRoot);
+        var id = self.getId();
+        var html= self.getHtml(id);
+        $(domRoot).append(html);
         ko.applyBindings(self, $(domRoot).find('#' + id)[0]);
     }
+
+    LocationPickTool.prototype.BindUI=function(self,domRoot)
+    {
+        self.isEnabled = ko.observable(false);
+        self.Log = ko.observable('');
+        self.toggleLocationPick = function() {
+            var enabled = !self.isEnabled();
+            if (enabled) {
+                self.enable();
+            } else {
+                self.disable();
+            }
+            self.isEnabled(enabled);
+        };
+    };
+
+    LocationPickTool.prototype.onUpdate = function(callback,result) {
+        callback(result);
+    };
+
+    LocationPickTool.prototype.getHtml = function(id) {
+       return '<div id="' + id + '"><button type="button" class="btn btn-primary" data-bind="css:{active: isEnabled()}, click: toggleLocationPick">位置拾取</button><div data-bind="css:{collapse: !isEnabled()}"><div class="card card-body" data-bind="text: Log()"></div></div></div>';
+    };
 
     LocationPickTool.prototype.Enable = function(callback) {
         this.enable(callback);

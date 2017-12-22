@@ -1,8 +1,9 @@
 define('BaseObj', ['Core/createGuid'], function(createGuid) {
     'use strict';
 
-    function BaseObj() {
-
+    function BaseObj(options) {
+        this._id = createGuid();
+        this.setOptions(options);
     }
 
     function __typeof__(objClass)
@@ -27,11 +28,6 @@ define('BaseObj', ['Core/createGuid'], function(createGuid) {
 
     BaseObj.prototype.setOptions = function(options) {
         this._options=options;
-    };
-
-    BaseObj.prototype.init = function(options) {
-        this._id = createGuid();
-        this.setOptions(options);
     };
 
     BaseObj.prototype.toString=function()

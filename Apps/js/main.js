@@ -4,9 +4,10 @@ require.config({
         'Engine': '../../Apps/js/lib/engine',
         'BaseObj': '../../Apps/js/lib/baseObj',
         'LocationPickTool': '../../Apps/js/lib/tools/locationPickTool/locationPickTool',
+        'DrawTool': '../../Apps/js/lib/tools/drawTool/drawTool',
         'jquery': '../../Apps/js/lib/third_party/jquery-3.2.1.slim.min',
         'ko':'./ThirdParty/knockout-3.4.2'
-    },
+    }
 });
 
 require(['Engine','Cesium','jquery'], function(Engine,Cesium,$) {
@@ -19,7 +20,7 @@ require(['Engine','Cesium','jquery'], function(Engine,Cesium,$) {
     viewer.scene.debugShowFramesPerSecond=true;
 
     var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
-        url : 'http://localhost/Production_4/Scene/Production_4.json'
+        url : 'http://192.168.199.119/Production_4/Scene/Production_4.json'
     }));
 
     tileset.readyPromise.then(function() {

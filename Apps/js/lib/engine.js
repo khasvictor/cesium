@@ -1,4 +1,4 @@
-define('Engine', ['Cesium', 'LocationPickTool', 'BaseObj', 'jquery', 'ThirdParty/when'], function(Cesium, LocationPickTool, BaseObj, $, when) {
+define('Engine', ['Cesium', 'LocationPickTool','DrawTool', 'BaseObj', 'jquery', 'ThirdParty/when'], function(Cesium, LocationPickTool,DrawTool, BaseObj, $, when) {
     'use strict';
 
     function Engine(container) {
@@ -12,13 +12,9 @@ define('Engine', ['Cesium', 'LocationPickTool', 'BaseObj', 'jquery', 'ThirdParty
         });
 
         var locationPickTool = new LocationPickTool(this, $('#tool-bar')[0], function(xy) {
-            console.log('1:' + xy.type);
-        });
-        var locationPickTool2 = new LocationPickTool(this, $('#tool-bar')[0], function(xy) {
-            console.log('2:' + xy.type);
-        });
-        console.log(locationPickTool.toString());
-
+        },{aa:2});
+        var drawTool = new DrawTool(this, $('#tool-bar')[0], function(xy) {
+        },{aa:2});
 
     }
 
