@@ -5,11 +5,11 @@ define('Engine', ['Cesium', 'LocationPickTool','DrawTool', 'BaseObj', 'jquery', 
 
         this._viewer = new Cesium.Viewer(container, {
             infoBox: true,
-            selectionIndicator: true,
             shadows: false,
-            terrainShadows: Cesium.ShadowMode.ENABLED,
-            cesiumInspector: true
+            terrainShadows: Cesium.ShadowMode.ENABLED
         });
+
+
 
         var locationPickTool = new LocationPickTool(this, $('#tool-bar')[0], function(xy) {
         },{aa:2});

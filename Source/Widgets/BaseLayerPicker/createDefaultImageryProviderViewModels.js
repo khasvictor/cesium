@@ -29,6 +29,17 @@ define([
         var providerViewModels = [];
 
         providerViewModels.push(new ProviderViewModel({
+            name : 'UV测试',
+            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
+            tooltip : 'UV测试',
+            creationFunction : function() {
+                return new UrlTemplateImageryProvider({
+                    url : '/Apps/img/uv.jpg',
+                    flipXY : true
+                });
+            }
+        }));
+        providerViewModels.push(new ProviderViewModel({
             name : '天地图全球矢量',
             iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
             tooltip : '天地图全球矢量',
@@ -43,7 +54,6 @@ define([
                 });
             }
         }));
-
         providerViewModels.push(new ProviderViewModel({
             name : '天地图全球影像',
             iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
@@ -75,17 +85,7 @@ define([
             }
         }));
 
-        providerViewModels.push(new ProviderViewModel({
-            name : 'UV测试',
-            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
-            tooltip : 'UV测试',
-            creationFunction : function() {
-                return new UrlTemplateImageryProvider({
-                    url : '/Apps/img/uv.jpg',
-                    flipXY : true
-                });
-            }
-        }));
+
 
         providerViewModels.push(new ProviderViewModel({
             name : 'Bing Maps Aerial',

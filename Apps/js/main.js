@@ -17,19 +17,36 @@ require(['Engine','Cesium','jquery'], function(Engine,Cesium,$) {
 
     var viewer=engine.getViewer();
 
-    viewer.scene.debugShowFramesPerSecond=true;
+    //viewer.scene.debugShowFramesPerSecond=true;
 
     var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
-        url : 'http://192.168.199.119/Production_4/Scene/Production_4.json'
+        maximumScreenSpaceError:2,
+        dynamicScreenSpaceError:true,
+        loadSiblings:true,
+        url : 'http://192.168.199.183/3dtiles/osgb/Production_3/scene/Production_3.json'//'http://localhost/Production_4/Scene/Production_4.json'
     }));
 
     tileset.readyPromise.then(function() {
         var boundingSphere = tileset.boundingSphere;
         viewer.camera.flyToBoundingSphere(boundingSphere);
         viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+
+
     }).otherwise(function(error) {
         throw(error);
     });
+
+    // var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+    //     url : 'http://localhost/MasterPlant_1c/tileset.json'
+    // }));
+
+    // tileset.readyPromise.then(function() {
+    //     var boundingSphere = tileset.boundingSphere;
+    //     viewer.camera.viewBoundingSphere(boundingSphere, new Cesium.HeadingPitchRange(0.5, -0.2, boundingSphere.radius * 4.0));
+    //     viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+    // }).otherwise(function(error) {
+    //     throw(error);
+    // });
 
     // var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
     //     url: 'http://localhost/tileset/tileset.json'
