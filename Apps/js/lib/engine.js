@@ -10,6 +10,7 @@ define('Engine', ['Cesium', 'LocationPickTool','DrawTool', 'BaseObj', 'jquery', 
         });
 
 
+        this._viewer.extend(Cesium.viewerCesium3DTilesInspectorMixin);
 
         var locationPickTool = new LocationPickTool(this, $('#tool-bar')[0], function(xy) {
         },{aa:2});
