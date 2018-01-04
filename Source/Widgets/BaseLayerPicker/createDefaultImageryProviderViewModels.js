@@ -27,66 +27,6 @@ define([
      */
     function createDefaultImageryProviderViewModels() {
         var providerViewModels = [];
-
-        providerViewModels.push(new ProviderViewModel({
-            name : 'UV测试',
-            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
-            tooltip : 'UV测试',
-            creationFunction : function() {
-                return new UrlTemplateImageryProvider({
-                    url : '/Apps/img/uv.jpg',
-                    flipXY : true
-                });
-            }
-        }));
-        providerViewModels.push(new ProviderViewModel({
-            name : '天地图全球矢量',
-            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
-            tooltip : '天地图全球矢量',
-            creationFunction : function() {
-                return new WebMapTileServiceImageryProvider({
-                    url: 'http://t0.tianditu.com/vec_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=vec&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles',
-                    layer: 'vec',//'tdtVecBasicLayer',
-                    style: 'default',
-                    format: 'image/jpeg',
-                    tileMatrixSetID: 'GoogleMapsCompatible',
-                    show: false
-                });
-            }
-        }));
-        providerViewModels.push(new ProviderViewModel({
-            name : '天地图全球影像',
-            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
-            tooltip : '天地图全球影像',
-            creationFunction : function() {
-                return new WebMapTileServiceImageryProvider({
-                    url: 'http://t0.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles',
-                    layer: 'img',
-                    style: 'default',
-                    format: 'image/jpeg',
-                    tileMatrixSetID: 'GoogleMapsCompatible',
-                    show: false
-                });
-            }
-        }));
-        providerViewModels.push(new ProviderViewModel({
-            name : '天地图全球地形晕渲',
-            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
-            tooltip : '天地图全球地形晕渲',
-            creationFunction : function() {
-                return new WebMapTileServiceImageryProvider({
-                    url: 'http://t0.tianditu.com/ter_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=ter&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles',
-                    layer: 'ter',
-                    style: 'default',
-                    format: 'image/jpeg',
-                    tileMatrixSetID: 'GoogleMapsCompatible',
-                    show: false
-                });
-            }
-        }));
-
-
-
         providerViewModels.push(new ProviderViewModel({
             name : 'Bing Maps Aerial',
             iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/bingAerial.png'),
@@ -267,7 +207,62 @@ Earth at night as seen by NASA/NOAA\'s Suomi NPP satellite.',
                 });
             }
         }));
-
+        providerViewModels.push(new ProviderViewModel({
+            name : 'UV测试',
+            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
+            tooltip : 'UV测试',
+            creationFunction : function() {
+                return new UrlTemplateImageryProvider({
+                    url : '/Apps/img/uv.jpg',
+                    flipXY : true
+                });
+            }
+        }));
+        providerViewModels.push(new ProviderViewModel({
+            name : '天地图全球矢量',
+            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
+            tooltip : '天地图全球矢量',
+            creationFunction : function() {
+                return new WebMapTileServiceImageryProvider({
+                    url: 'http://t0.tianditu.com/vec_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=vec&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles',
+                    layer: 'vec',//'tdtVecBasicLayer',
+                    style: 'default',
+                    format: 'image/jpeg',
+                    tileMatrixSetID: 'GoogleMapsCompatible',
+                    show: false
+                });
+            }
+        }));
+        providerViewModels.push(new ProviderViewModel({
+            name : '天地图全球影像',
+            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
+            tooltip : '天地图全球影像',
+            creationFunction : function() {
+                return new WebMapTileServiceImageryProvider({
+                    url: 'http://t0.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles',
+                    layer: 'img',
+                    style: 'default',
+                    format: 'image/jpeg',
+                    tileMatrixSetID: 'GoogleMapsCompatible',
+                    show: false
+                });
+            }
+        }));
+        providerViewModels.push(new ProviderViewModel({
+            name : '天地图全球地形晕渲',
+            iconUrl : buildModuleUrl('Widgets/Images/ImageryProviders/naturalEarthII.png'),
+            tooltip : '天地图全球地形晕渲',
+            creationFunction : function() {
+                return new WebMapTileServiceImageryProvider({
+                    url: 'http://t0.tianditu.com/ter_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=ter&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles',
+                    layer: 'ter',
+                    style: 'default',
+                    format: 'image/jpeg',
+                    tileMatrixSetID: 'GoogleMapsCompatible',
+                    show: false
+                });
+            }
+        }));
         return providerViewModels;
     }
 

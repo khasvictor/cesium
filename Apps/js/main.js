@@ -20,9 +20,9 @@ require(['Engine','Cesium','jquery'], function(Engine,Cesium,$) {
     //viewer.scene.debugShowFramesPerSecond=true;
 
     var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
-        // maximumScreenSpaceError:16,
-        // dynamicScreenSpaceError:true,
-        // loadSiblings:true,
+        maximumScreenSpaceError:2,
+        dynamicScreenSpaceError:true,
+        loadSiblings:true,
         url : 'http://192.168.199.183/3dtiles/osgb/Production_3/scene/Production_3.json'//'http://localhost/Production_4/Scene/Production_4.json'
     }));
 
