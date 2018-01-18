@@ -1,5 +1,5 @@
 // This file is automatically rebuilt by the Cesium build process.
-var hello_world_index = 66;
+var hello_world_index = 69;
 var gallery_demos = [{
   "name": "3D Models",
   "date": 1513581954816,
@@ -50,23 +50,35 @@ var gallery_demos = [{
   "img": "3D Tiles Interior.jpg"
 }, {
   "name": "3D Tiles Photogrammetry",
-  "date": 1513581954825,
+  "date": 1515977548293,
   "img": "3D Tiles Photogrammetry.jpg"
+}, {
+  "name": "3D Tiles Photogrammetry Classification",
+  "date": 1515977548293,
+  "img": "3D Tiles Photogrammetry Classification.jpg"
 }, {
   "name": "3D Tiles Point Cloud",
   "date": 1513581954826,
   "img": "3D Tiles Point Cloud.jpg"
 }, {
+  "name": "3D Tiles Point Cloud Classification",
+  "date": 1515977548293,
+  "img": "3D Tiles Point Cloud Classification.jpg"
+}, {
   "name": "3D Tiles Point Cloud Styling",
   "date": 1513581954826,
   "img": "3D Tiles Point Cloud Styling.jpg"
+}, {
+  "name": "3D Tiles Terrain Classification",
+  "date": 1515977548293,
+  "img": "3D Tiles Terrain Classification.jpg"
 }, {
   "name": "ArcGIS MapServer",
   "date": 1513581954827,
   "img": "ArcGIS MapServer.jpg"
 }, {
   "name": "ArcticDEM",
-  "date": 1513581954827,
+  "date": 1515977548293,
   "img": "ArcticDEM.jpg"
 }, {
   "name": "Atmosphere Color",
@@ -110,7 +122,7 @@ var gallery_demos = [{
   "img": "CZML Corridor.jpg"
 }, {
   "name": "CZML Custom Properties",
-  "date": 1513581954837,
+  "date": 1515977548293,
   "img": "CZML Custom Properties.jpg"
 }, {
   "name": "CZML Model",
@@ -274,15 +286,15 @@ var gallery_demos = [{
   "img": "Imagery Adjustment.jpg"
 }, {
   "name": "Imagery Layers",
-  "date": 1513581954875,
+  "date": 1515977548303,
   "img": "Imagery Layers.jpg"
 }, {
   "name": "Imagery Layers Manipulation",
-  "date": 1513581954873,
+  "date": 1515977548303,
   "img": "Imagery Layers Manipulation.jpg"
 }, {
   "name": "Imagery Layers Split",
-  "date": 1513581954874,
+  "date": 1515977548303,
   "img": "Imagery Layers Split.jpg"
 }, {
   "name": "Imagery Layers Texture Filters",

@@ -2,6 +2,9 @@
 define(function() {
     'use strict';
     return "uniform sampler2D u_atlas;\n\
+#ifdef VECTOR_TILE\n\
+uniform vec4 u_highlightColor;\n\
+#endif\n\
 varying vec2 v_textureCoordinates;\n\
 #ifdef RENDER_FOR_PICK\n\
 varying vec4 v_pickColor;\n\
@@ -33,6 +36,9 @@ if (color.a >= 0.995)\n\
 discard;\n\
 }\n\
 #endif\n\
+#endif\n\
+#ifdef VECTOR_TILE\n\
+color *= u_highlightColor;\n\
 #endif\n\
 #ifdef RENDER_FOR_PICK\n\
 gl_FragColor = v_pickColor;\n\

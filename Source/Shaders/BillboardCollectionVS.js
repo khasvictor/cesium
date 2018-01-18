@@ -13,6 +13,9 @@ attribute vec4 eyeOffset;\n\
 attribute vec4 scaleByDistance;\n\
 attribute vec4 pixelOffsetScaleByDistance;\n\
 attribute vec3 distanceDisplayConditionAndDisableDepth;\n\
+#ifdef VECTOR_TILE\n\
+attribute float a_batchId;\n\
+#endif\n\
 varying vec2 v_textureCoordinates;\n\
 #ifdef RENDER_FOR_PICK\n\
 varying vec4 v_pickColor;\n\
