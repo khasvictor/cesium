@@ -176,7 +176,7 @@ define([
                     newProvider = value.creationCommand();
                 }
 
-                //this._globe.depthTestAgainstTerrain = !(newProvider instanceof EllipsoidTerrainProvider);
+                this._globe.depthTestAgainstTerrain = !(newProvider instanceof EllipsoidTerrainProvider);
                 this._globe.terrainProvider = newProvider;
                 selectedTerrainViewModel(value);
                 this.dropDownVisible = false;

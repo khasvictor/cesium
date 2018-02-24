@@ -19,22 +19,50 @@ require(['Engine','Cesium','jquery'], function(Engine,Cesium,$) {
 
     //viewer.scene.debugShowFramesPerSecond=true;
 
-    var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
-        maximumScreenSpaceError:2,
-        dynamicScreenSpaceError:true,
-        loadSiblings:true,
-        url : 'http://192.168.199.183/3dtiles/osgb/Production_3/scene/Production_3.json'//'http://localhost/Production_4/Scene/Production_4.json'
-    }));
 
+    var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+        // dynamicScreenSpaceError:true,
+        //loadSiblings:true,
+        maximumScreenSpaceError:128,
+        url : 'http://localhost/d/hbm_core/tileset.json'//'http://192.168.199.183/3dtiles/osgb/Production_3/scene/Production_3.json'//'http://localhost/Production_4/Scene/Production_4.json'
+    }));
     tileset.readyPromise.then(function() {
         var boundingSphere = tileset.boundingSphere;
         viewer.camera.flyToBoundingSphere(boundingSphere);
         viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
-
-
     }).otherwise(function(error) {
         throw(error);
     });
+
+    // viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+    //     // maximumScreenSpaceError:2,
+    //     // dynamicScreenSpaceError:true,
+    //     // loadSiblings:true,
+    //     url : 'http://localhost/PointCloudRGB/tileset6.json'//'http://192.168.199.183/3dtiles/osgb/Production_3/scene/Production_3.json'//'http://localhost/Production_4/Scene/Production_4.json'
+    // }));
+
+    // viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+    //     // maximumScreenSpaceError:2,
+    //     // dynamicScreenSpaceError:true,
+    //     // loadSiblings:true,
+    //     url : 'http://localhost/PointCloudRGB/tileset0.json'//'http://192.168.199.183/3dtiles/osgb/Production_3/scene/Production_3.json'//'http://localhost/Production_4/Scene/Production_4.json'
+    // }));
+
+    // viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+    //     // maximumScreenSpaceError:2,
+    //     // dynamicScreenSpaceError:true,
+    //     // loadSiblings:true,
+    //     url : 'http://localhost/PointCloudRGB/tileset2.json'//'http://192.168.199.183/3dtiles/osgb/Production_3/scene/Production_3.json'//'http://localhost/Production_4/Scene/Production_4.json'
+    // }));
+
+    // viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+    //     // maximumScreenSpaceError:2,
+    //     // dynamicScreenSpaceError:true,
+    //     // loadSiblings:true,
+    //     url : 'http://localhost/PointCloudRGB/tileset4.json'//'http://192.168.199.183/3dtiles/osgb/Production_3/scene/Production_3.json'//'http://localhost/Production_4/Scene/Production_4.json'
+    // }));
+
+
 
     // var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
     //     url : 'http://localhost/MasterPlant_1c/tileset.json'

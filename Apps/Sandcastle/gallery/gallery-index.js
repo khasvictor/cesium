@@ -10,19 +10,19 @@ var gallery_demos = [{
   "img": "3D Models Coloring.jpg"
 }, {
   "name": "3D Tiles Adjust Height",
-  "date": 1513581954817,
+  "date": 1516242684615,
   "img": "3D Tiles Adjust Height.jpg"
 }, {
   "name": "3D Tiles BIM",
-  "date": 1513581954818,
+  "date": 1516242684615,
   "img": "3D Tiles BIM.jpg"
 }, {
   "name": "3D Tiles Batch Table Hierarchy",
-  "date": 1513581954819,
+  "date": 1516242684615,
   "img": "3D Tiles Batch Table Hierarchy.jpg"
 }, {
   "name": "3D Tiles Clipping Planes",
-  "date": 1514968490752,
+  "date": 1516242684615,
   "img": "3D Tiles Clipping Planes.jpg"
 }, {
   "name": "3D Tiles Feature Picking",
@@ -34,11 +34,11 @@ var gallery_demos = [{
   "img": "3D Tiles Feature Styling.jpg"
 }, {
   "name": "3D Tiles Formats",
-  "date": 1513581954822,
+  "date": 1516242684615,
   "img": "3D Tiles Formats.jpg"
 }, {
   "name": "3D Tiles Inspector",
-  "date": 1513581954822,
+  "date": 1516242684615,
   "img": "3D Tiles Inspector.jpg"
 }, {
   "name": "3D Tiles Interactivity",
@@ -50,15 +50,15 @@ var gallery_demos = [{
   "img": "3D Tiles Interior.jpg"
 }, {
   "name": "3D Tiles Photogrammetry",
-  "date": 1515977548293,
+  "date": 1516242684615,
   "img": "3D Tiles Photogrammetry.jpg"
 }, {
   "name": "3D Tiles Photogrammetry Classification",
-  "date": 1515977548293,
+  "date": 1516242684615,
   "img": "3D Tiles Photogrammetry Classification.jpg"
 }, {
   "name": "3D Tiles Point Cloud",
-  "date": 1513581954826,
+  "date": 1516242684615,
   "img": "3D Tiles Point Cloud.jpg"
 }, {
   "name": "3D Tiles Point Cloud Classification",
@@ -66,7 +66,7 @@ var gallery_demos = [{
   "img": "3D Tiles Point Cloud Classification.jpg"
 }, {
   "name": "3D Tiles Point Cloud Styling",
-  "date": 1513581954826,
+  "date": 1516242684615,
   "img": "3D Tiles Point Cloud Styling.jpg"
 }, {
   "name": "3D Tiles Terrain Classification",
