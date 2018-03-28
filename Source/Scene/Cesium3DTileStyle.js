@@ -4,7 +4,7 @@ define([
         '../Core/defined',
         '../Core/defineProperties',
         '../Core/DeveloperError',
-        '../Core/loadJson',
+        '../Core/Resource',
         '../ThirdParty/when',
         './ConditionsExpression',
         './Expression'
@@ -14,7 +14,7 @@ define([
         defined,
         defineProperties,
         DeveloperError,
-        loadJson,
+        Resource,
         when,
         ConditionsExpression,
         Expression) {
@@ -30,7 +30,7 @@ define([
      * @alias Cesium3DTileStyle
      * @constructor
      *
-     * @param {String|Object} [style] The url of a style or an object defining a style.
+     * @param {Resource|String|Object} [style] The url of a style or an object defining a style.
      *
      * @example
      * tileset.style = new Cesium.Cesium3DTileStyle({
@@ -97,8 +97,9 @@ define([
         this._colorShaderTranslucent = false;
 
         var promise;
-        if (typeof style === 'string') {
-            promise = loadJson(style);
+        if (typeof style === 'string' || style instanceof Resource) {
+            var resource = Resource.createIfNeeded(style);
+            promise = resource.fetchJson(style);
         } else {
             promise = when.resolve(style);
         }

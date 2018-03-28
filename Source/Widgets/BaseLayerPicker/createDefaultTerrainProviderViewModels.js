@@ -1,12 +1,12 @@
 define([
         '../../Core/buildModuleUrl',
-        '../../Core/CesiumTerrainProvider',
+        '../../Core/createWorldTerrain',
         '../../Core/EllipsoidTerrainProvider',
         '../../Core/VRTheWorldTerrainProvider',
         '../BaseLayerPicker/ProviderViewModel'
     ], function(
         buildModuleUrl,
-        CesiumTerrainProvider,
+        createWorldTerrain,
         EllipsoidTerrainProvider,
         VRTheWorldTerrainProvider,
         ProviderViewModel) {
@@ -26,16 +26,14 @@ define([
             }
         }));
 
-
         providerViewModels.push(new ProviderViewModel({
-            name : 'STK World Terrain meshes',
-            iconUrl : buildModuleUrl('Widgets/Images/TerrainProviders/STK.png'),
-            tooltip : 'High-resolution, mesh-based terrain for the entire globe. Free for use on the Internet. Closed-network options are available.\nhttp://www.agi.com',
-            creationFunction : function() {
-                return new CesiumTerrainProvider({
-                    url : 'https://assets.agi.com/stk-terrain/v1/tilesets/world/tiles',
-                    requestWaterMask : true,
-                    requestVertexNormals : true
+            name : 'Cesium World Terrain',
+            iconUrl : buildModuleUrl('Widgets/Images/TerrainProviders/CesiumWorldTerrain.png'),
+            tooltip : 'High-resolution global terrain tileset curated from several datasources and hosted by Cesium ion',
+            creationFunction : function(){
+                return createWorldTerrain({
+                    requestWaterMask: true,
+                    requestVertexNormals: true
                 });
             }
         }));
