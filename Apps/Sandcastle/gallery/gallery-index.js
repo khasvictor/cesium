@@ -436,4 +436,182 @@ var gallery_demos = [{
   "name": "Web Map Tile Service with Time",
   "date": 1513581954900,
   "img": "Web Map Tile Service with Time.jpg"
+}, {
+  "name": "development/3D Models",
+  "date": 1513581954903,
+  "img": "development/3D Models.jpg"
+}, {
+  "name": "development/3D Models Instancing",
+  "date": 1513581954901,
+  "img": "development/3D Models Instancing.jpg"
+}, {
+  "name": "development/3D Models Node Explorer",
+  "date": 1513581954902,
+  "img": "development/3D Models Node Explorer.jpg"
+}, {
+  "name": "development/BillboardClampToGround",
+  "date": 1513581954903
+}, {
+  "name": "development/Billboards",
+  "date": 1513581954905,
+  "img": "development/Billboards.jpg"
+}, {
+  "name": "development/Billboards Instancing",
+  "date": 1513581954904,
+  "img": "development/Billboards Instancing.jpg"
+}, {
+  "name": "development/Box",
+  "date": 1513581954906,
+  "img": "development/Box.jpg"
+}, {
+  "name": "development/Box Outline",
+  "date": 1513581954905,
+  "img": "development/Box Outline.jpg"
+}, {
+  "name": "development/Circle",
+  "date": 1513581954908,
+  "img": "development/Circle.jpg"
+}, {
+  "name": "development/Circle Outline",
+  "date": 1513581954907,
+  "img": "development/Circle Outline.jpg"
+}, {
+  "name": "development/Corridor",
+  "date": 1513581954909,
+  "img": "development/Corridor.jpg"
+}, {
+  "name": "development/Corridor Outline",
+  "date": 1513581954909,
+  "img": "development/Corridor Outline.jpg"
+}, {
+  "name": "development/Cylinder",
+  "date": 1513581954911,
+  "img": "development/Cylinder.jpg"
+}, {
+  "name": "development/Cylinder Outline",
+  "date": 1513581954910,
+  "img": "development/Cylinder Outline.jpg"
+}, {
+  "name": "development/Display Conditions",
+  "date": 1513581954912
+}, {
+  "name": "development/Ellipse",
+  "date": 1513581954913,
+  "img": "development/Ellipse.jpg"
+}, {
+  "name": "development/Ellipse Outline",
+  "date": 1513581954912,
+  "img": "development/Ellipse Outline.jpg"
+}, {
+  "name": "development/Ellipsoid",
+  "date": 1513581954915,
+  "img": "development/Ellipsoid.jpg"
+}, {
+  "name": "development/Ellipsoid Outline",
+  "date": 1513581954913,
+  "img": "development/Ellipsoid Outline.jpg"
+}, {
+  "name": "development/Ellipsoid Surface",
+  "date": 1513581954914,
+  "img": "development/Ellipsoid Surface.jpg"
+}, {
+  "name": "development/Fog",
+  "date": 1513581954916
+}, {
+  "name": "development/Frustum",
+  "date": 1513581954916
+}, {
+  "name": "development/Geometry and Appearances",
+  "date": 1513581954917,
+  "img": "development/Geometry and Appearances.jpg"
+}, {
+  "name": "development/Ground Primitive",
+  "date": 1513581954918,
+  "img": "development/Ground Primitive.jpg"
+}, {
+  "name": "development/Labels",
+  "date": 1513581954919,
+  "img": "development/Labels.jpg"
+}, {
+  "name": "development/Material",
+  "date": 1513581954920,
+  "img": "development/Material.jpg"
+}, {
+  "name": "development/Multiple Shadows",
+  "date": 1513581954921
+}, {
+  "name": "development/Per Instance Color",
+  "date": 1513581954921,
+  "img": "development/Per Instance Color.jpg"
+}, {
+  "name": "development/PointPrimitives",
+  "date": 1513581954922,
+  "img": "development/PointPrimitives.jpg"
+}, {
+  "name": "development/Polygon",
+  "date": 1513581954924,
+  "img": "development/Polygon.jpg"
+}, {
+  "name": "development/Polygon Outline",
+  "date": 1513581954923,
+  "img": "development/Polygon Outline.jpg"
+}, {
+  "name": "development/Polyline",
+  "date": 1513581954928,
+  "img": "development/Polyline.jpg"
+}, {
+  "name": "development/Polyline Color",
+  "date": 1513581954925,
+  "img": "development/Polyline Color.jpg"
+}, {
+  "name": "development/Polyline Material",
+  "date": 1513581954925,
+  "img": "development/Polyline Material.jpg"
+}, {
+  "name": "development/Polyline Volume",
+  "date": 1513581954927,
+  "img": "development/Polyline Volume.jpg"
+}, {
+  "name": "development/Polyline Volume Outline",
+  "date": 1513581954926,
+  "img": "development/Polyline Volume Outline.jpg"
+}, {
+  "name": "development/Polylines",
+  "date": 1513581954929,
+  "img": "development/Polylines.jpg"
+}, {
+  "name": "development/Rectangle",
+  "date": 1513581954931,
+  "img": "development/Rectangle.jpg"
+}, {
+  "name": "development/Rectangle Outline",
+  "date": 1513581954930,
+  "img": "development/Rectangle Outline.jpg"
+}, {
+  "name": "development/Shadows",
+  "date": 1513581954932
+}, {
+  "name": "development/Simple Polyline",
+  "date": 1513581954932,
+  "img": "development/Simple Polyline.jpg"
+}, {
+  "name": "development/Sphere",
+  "date": 1513581954934,
+  "img": "development/Sphere.jpg"
+}, {
+  "name": "development/Sphere Outline",
+  "date": 1513581954933,
+  "img": "development/Sphere Outline.jpg"
+}, {
+  "name": "development/Volumes",
+  "date": 1513581954934,
+  "img": "development/Volumes.jpg"
+}, {
+  "name": "development/Wall",
+  "date": 1513581954936,
+  "img": "development/Wall.jpg"
+}, {
+  "name": "development/Wall Outline",
+  "date": 1513581954935,
+  "img": "development/Wall Outline.jpg"
 }];
