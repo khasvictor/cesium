@@ -23,8 +23,8 @@ require(['Engine','Cesium','jquery'], function(Engine,Cesium,$) {
     var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
         // dynamicScreenSpaceError:true,
         //loadSiblings:true,
-        maximumScreenSpaceError:128,
-        url : 'http://localhost/d/hbm_core/tileset.json'//'http://192.168.199.183/3dtiles/osgb/Production_3/scene/Production_3.json'//'http://localhost/Production_4/Scene/Production_4.json'
+        //maximumScreenSpaceError:128,
+        url : 'http://localhost/d/tileset00000/tileset.json'//'http://192.168.199.183/3dtiles/osgb/Production_3/scene/Production_3.json'//'http://localhost/Production_4/Scene/Production_4.json'
     }));
     tileset.readyPromise.then(function() {
         var boundingSphere = tileset.boundingSphere;
