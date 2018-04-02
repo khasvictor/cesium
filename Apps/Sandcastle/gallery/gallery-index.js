@@ -2,478 +2,479 @@
 var hello_world_index = 74;
 var gallery_demos = [{
   "name": "3D Models",
-  "date": 1522199914194,
+  "isNew": false,
   "img": "3D Models.jpg"
 }, {
   "name": "3D Models Coloring",
-  "date": 1522199914193,
+  "isNew": false,
   "img": "3D Models Coloring.jpg"
 }, {
   "name": "3D Tiles Adjust Height",
-  "date": 1522199914194,
+  "isNew": false,
   "img": "3D Tiles Adjust Height.jpg"
 }, {
   "name": "3D Tiles BIM",
-  "date": 1522199914195,
+  "isNew": false,
   "img": "3D Tiles BIM.jpg"
 }, {
   "name": "3D Tiles Batch Table Hierarchy",
-  "date": 1522199914196,
+  "isNew": false,
   "img": "3D Tiles Batch Table Hierarchy.jpg"
 }, {
   "name": "3D Tiles Clipping Planes",
-  "date": 1522199914197,
+  "isNew": false,
   "img": "3D Tiles Clipping Planes.jpg"
 }, {
   "name": "3D Tiles Feature Picking",
-  "date": 1522199914197,
+  "isNew": false,
   "img": "3D Tiles Feature Picking.jpg"
 }, {
   "name": "3D Tiles Feature Styling",
-  "date": 1522199914198,
+  "isNew": false,
   "img": "3D Tiles Feature Styling.jpg"
 }, {
   "name": "3D Tiles Formats",
-  "date": 1522199914199,
+  "isNew": false,
   "img": "3D Tiles Formats.jpg"
 }, {
   "name": "3D Tiles Inspector",
-  "date": 1522199914200,
+  "isNew": false,
   "img": "3D Tiles Inspector.jpg"
 }, {
   "name": "3D Tiles Interactivity",
-  "date": 1522199914201,
+  "isNew": false,
   "img": "3D Tiles Interactivity.jpg"
 }, {
   "name": "3D Tiles Interior",
-  "date": 1522199914201,
+  "isNew": false,
   "img": "3D Tiles Interior.jpg"
 }, {
   "name": "3D Tiles Photogrammetry",
-  "date": 1522199914202,
+  "isNew": false,
   "img": "3D Tiles Photogrammetry.jpg"
 }, {
   "name": "3D Tiles Photogrammetry Classification",
-  "date": 1522199914202,
+  "isNew": false,
   "img": "3D Tiles Photogrammetry Classification.jpg"
 }, {
   "name": "3D Tiles Point Cloud",
-  "date": 1522199914206,
+  "isNew": false,
   "img": "3D Tiles Point Cloud.jpg"
 }, {
   "name": "3D Tiles Point Cloud Classification",
-  "date": 1522199914203,
+  "isNew": false,
   "img": "3D Tiles Point Cloud Classification.jpg"
 }, {
   "name": "3D Tiles Point Cloud Shading",
-  "date": 1522199914204,
+  "isNew": false,
   "img": "3D Tiles Point Cloud Shading.jpg"
 }, {
   "name": "3D Tiles Point Cloud Styling",
-  "date": 1522199914205,
+  "isNew": false,
   "img": "3D Tiles Point Cloud Styling.jpg"
 }, {
   "name": "3D Tiles Terrain Classification",
-  "date": 1522199914206,
+  "isNew": false,
   "img": "3D Tiles Terrain Classification.jpg"
 }, {
   "name": "ArcGIS MapServer",
-  "date": 1513581954827,
+  "isNew": false,
   "img": "ArcGIS MapServer.jpg"
 }, {
   "name": "ArcticDEM",
-  "date": 1522199914207,
+  "isNew": false,
   "img": "ArcticDEM.jpg"
 }, {
   "name": "Atmosphere Color",
-  "date": 1513581954829,
+  "isNew": false,
   "img": "Atmosphere Color.jpg"
 }, {
   "name": "Billboards",
-  "date": 1522199914209,
+  "isNew": false,
   "img": "Billboards.jpg"
 }, {
   "name": "Blue Marble",
-  "date": 1522199914210,
+  "isNew": true,
   "img": "Blue Marble.jpg"
 }, {
   "name": "Box",
-  "date": 1513581954831,
+  "isNew": false,
   "img": "Box.jpg"
 }, {
   "name": "CZML",
-  "date": 1522199914217,
+  "isNew": false,
   "img": "CZML.jpg"
 }, {
   "name": "CZML Billboard and Label",
-  "date": 1513581954832,
+  "isNew": false,
   "img": "CZML Billboard and Label.jpg"
 }, {
   "name": "CZML Box",
-  "date": 1513581954832,
+  "isNew": false,
   "img": "CZML Box.jpg"
 }, {
   "name": "CZML Circles and Ellipses",
-  "date": 1513581954833,
+  "isNew": false,
   "img": "CZML Circles and Ellipses.jpg"
 }, {
   "name": "CZML Colors",
-  "date": 1513581954834,
+  "isNew": false,
   "img": "CZML Colors.jpg"
 }, {
   "name": "CZML Cones and Cylinders",
-  "date": 1513581954835,
+  "isNew": false,
   "img": "CZML Cones and Cylinders.jpg"
 }, {
   "name": "CZML Corridor",
-  "date": 1513581954836,
+  "isNew": false,
   "img": "CZML Corridor.jpg"
 }, {
   "name": "CZML Custom Properties",
-  "date": 1522199914211,
+  "isNew": false,
   "img": "CZML Custom Properties.jpg"
 }, {
   "name": "CZML Model",
-  "date": 1522199914212,
+  "isNew": false,
   "img": "CZML Model.jpg"
 }, {
   "name": "CZML Model - Node Transformations",
-  "date": 1522199914212,
+  "isNew": false,
   "img": "CZML Model - Node Transformations.jpg"
 }, {
   "name": "CZML Path",
-  "date": 1522199914213,
+  "isNew": false,
   "img": "CZML Path.jpg"
 }, {
   "name": "CZML Point",
-  "date": 1522199914215,
+  "isNew": false,
   "img": "CZML Point.jpg"
 }, {
   "name": "CZML Point - Time Dynamic",
-  "date": 1522199914214,
+  "isNew": false,
   "img": "CZML Point - Time Dynamic.jpg"
 }, {
   "name": "CZML Polygon",
-  "date": 1513581954844,
+  "isNew": false,
   "img": "CZML Polygon.jpg"
 }, {
   "name": "CZML Polygon - Interpolating References",
-  "date": 1522199914215,
+  "isNew": false,
   "img": "CZML Polygon - Interpolating References.jpg"
 }, {
   "name": "CZML Polygon - Intervals, Availability",
-  "date": 1522199914216,
+  "isNew": false,
   "img": "CZML Polygon - Intervals, Availability.jpg"
 }, {
   "name": "CZML Polyline",
-  "date": 1513581954846,
+  "isNew": false,
   "img": "CZML Polyline.jpg"
 }, {
   "name": "CZML Position Definitions",
-  "date": 1513581954846,
+  "isNew": false,
   "img": "CZML Position Definitions.jpg"
 }, {
   "name": "CZML Rectangle",
-  "date": 1513581954847,
+  "isNew": false,
   "img": "CZML Rectangle.jpg"
 }, {
   "name": "CZML Reference Properties",
-  "date": 1513581954848,
+  "isNew": false,
   "img": "CZML Reference Properties.jpg"
 }, {
   "name": "CZML Spheres and Ellipsoids",
-  "date": 1513581954849,
+  "isNew": false,
   "img": "CZML Spheres and Ellipsoids.jpg"
 }, {
   "name": "CZML Wall",
-  "date": 1513581954850,
+  "isNew": false,
   "img": "CZML Wall.jpg"
 }, {
   "name": "Callback Property",
-  "date": 1522199914218,
+  "isNew": false,
   "img": "Callback Property.jpg"
 }, {
   "name": "Camera",
-  "date": 1522199914218,
+  "isNew": false,
   "img": "Camera.jpg"
 }, {
   "name": "Camera Tutorial",
-  "date": 1513581954853,
+  "isNew": false,
   "img": "Camera Tutorial.jpg"
 }, {
   "name": "Cardboard",
-  "date": 1522199914219,
+  "isNew": false,
   "img": "Cardboard.jpg"
 }, {
   "name": "Cesium Inspector",
-  "date": 1522199914220,
+  "isNew": false,
   "img": "Cesium Inspector.jpg"
 }, {
   "name": "Cesium Widget",
-  "date": 1513581954856,
+  "isNew": false,
   "img": "Cesium Widget.jpg"
 }, {
   "name": "Cesium World Terrain",
-  "date": 1522199914220,
+  "isNew": true,
   "img": "Cesium World Terrain.jpg"
 }, {
   "name": "Circles and Ellipses",
-  "date": 1513581954857,
+  "isNew": false,
   "img": "Circles and Ellipses.jpg"
 }, {
   "name": "Classification",
-  "date": 1522199914222,
+  "isNew": false,
   "img": "Classification.jpg"
 }, {
   "name": "Classification Types",
-  "date": 1522199914221,
+  "isNew": false,
   "img": "Classification Types.jpg"
 }, {
   "name": "Clock",
-  "date": 1522199914222,
+  "isNew": false,
   "img": "Clock.jpg"
 }, {
   "name": "Clustering",
-  "date": 1513581954861,
+  "isNew": false,
   "img": "Clustering.jpg"
 }, {
   "name": "Corridor",
-  "date": 1513581954861,
+  "isNew": false,
   "img": "Corridor.jpg"
 }, {
   "name": "Custom DataSource",
-  "date": 1522199914223,
+  "isNew": false,
   "img": "Custom DataSource.jpg"
 }, {
   "name": "Custom Geocoder",
-  "date": 1522199914224,
+  "isNew": false,
   "img": "Custom Geocoder.jpg"
 }, {
   "name": "Cylinders and Cones",
-  "date": 1513581954863,
+  "isNew": false,
   "img": "Cylinders and Cones.jpg"
 }, {
   "name": "DataSource Ordering",
-  "date": 1522199914224,
+  "isNew": true,
   "img": "DataSource Ordering.jpg"
 }, {
   "name": "Distance Display Conditions",
-  "date": 1513581954864,
+  "isNew": false,
   "img": "Distance Display Conditions.jpg"
 }, {
   "name": "Earth at Night",
-  "date": 1522199914225,
+  "isNew": true,
   "img": "Earth at Night.jpg"
 }, {
   "name": "GeoJSON and TopoJSON",
-  "date": 1513581954865,
+  "isNew": false,
   "img": "GeoJSON and TopoJSON.jpg"
 }, {
   "name": "GeoJSON simplestyle",
-  "date": 1513581954866,
+  "isNew": false,
   "img": "GeoJSON simplestyle.jpg"
 }, {
   "name": "Geometry and Appearances",
-  "date": 1522199914226,
+  "isNew": false,
   "img": "Geometry and Appearances.jpg"
 }, {
   "name": "Globe Materials",
-  "date": 1522199914227,
+  "isNew": false,
   "img": "Globe Materials.jpg"
 }, {
   "name": "Google Earth Enterprise",
-  "date": 1513581954868,
+  "isNew": false,
   "img": "Google Earth Enterprise.jpg"
 }, {
   "name": "Ground Clamping",
-  "date": 1522199914230,
+  "isNew": false,
   "img": "Ground Clamping.jpg"
 }, {
   "name": "HTML Overlays",
-  "date": 1513581954870,
+  "isNew": false,
   "img": "HTML Overlays.jpg"
 }, {
   "name": "HeadingPitchRoll",
-  "date": 1522199914231,
+  "isNew": false,
   "img": "HeadingPitchRoll.jpg"
 }, {
   "name": "Hello World",
-  "date": 1513581954871,
+  "isNew": false,
   "img": "Hello World.jpg"
 }, {
   "name": "Imagery Adjustment",
-  "date": 1513581954872,
+  "isNew": false,
   "img": "Imagery Adjustment.jpg"
 }, {
   "name": "Imagery Layers",
-  "date": 1522199914233,
+  "isNew": false,
   "img": "Imagery Layers.jpg"
 }, {
   "name": "Imagery Layers Manipulation",
-  "date": 1515977548303,
+  "isNew": false,
   "img": "Imagery Layers Manipulation.jpg"
 }, {
   "name": "Imagery Layers Split",
-  "date": 1522199914231,
+  "isNew": false,
   "img": "Imagery Layers Split.jpg"
 }, {
   "name": "Imagery Layers Texture Filters",
-  "date": 1522199914232,
+  "isNew": false,
   "img": "Imagery Layers Texture Filters.jpg"
 }, {
   "name": "Interpolation",
-  "date": 1522199914233,
+  "isNew": false,
   "img": "Interpolation.jpg"
 }, {
   "name": "KML",
-  "date": 1513581954877,
+  "isNew": false,
   "img": "KML.jpg"
 }, {
   "name": "KML Tours",
-  "date": 1513581954876,
+  "isNew": false,
   "img": "KML Tours.jpg"
 }, {
   "name": "Labels",
-  "date": 1513581954878,
+  "isNew": false,
   "img": "Labels.jpg"
 }, {
   "name": "LocalToFixedFrame",
-  "date": 1522199914234,
+  "isNew": false,
   "img": "LocalToFixedFrame.jpg"
 }, {
   "name": "Map Pins",
-  "date": 1513581954880,
+  "isNew": false,
   "img": "Map Pins.jpg"
 }, {
   "name": "Materials",
-  "date": 1513581954880,
+  "isNew": false,
   "img": "Materials.jpg"
 }, {
   "name": "Multi-part CZML",
-  "date": 1522199914235,
+  "isNew": true,
   "img": "Multi-part CZML.jpg"
 }, {
   "name": "Natural Earth II",
-  "date": 1522199914236,
+  "isNew": true,
   "img": "Natural Earth II.jpg"
 }, {
   "name": "Offline",
-  "date": 1513581954881,
+  "isNew": false,
   "img": "Offline.jpg"
 }, {
   "name": "PAMAP Terrain",
-  "date": 1522199914652,
+  "isNew": false,
   "img": "PAMAP Terrain.jpg"
 }, {
   "name": "Particle System",
-  "date": 1522199914239,
+  "isNew": false,
   "img": "Particle System.jpg"
 }, {
   "name": "Particle System Fireworks",
-  "date": 1522199914238,
+  "isNew": false,
   "img": "Particle System Fireworks.jpg"
 }, {
   "name": "Physically-Based Materials",
-  "date": 1522199914240,
+  "isNew": false,
   "img": "Physically-Based Materials.jpg"
 }, {
   "name": "Picking",
-  "date": 1513581954885,
+  "isNew": false,
   "img": "Picking.jpg"
 }, {
   "name": "Plane",
-  "date": 1513581954885,
+  "isNew": false,
   "img": "Plane.jpg"
 }, {
   "name": "Points",
-  "date": 1513581954886,
+  "isNew": false,
   "img": "Points.jpg"
 }, {
   "name": "Polygon",
-  "date": 1513581954887,
+  "isNew": false,
   "img": "Polygon.jpg"
 }, {
   "name": "Polyline",
-  "date": 1513581954889,
+  "isNew": false,
   "img": "Polyline.jpg"
 }, {
   "name": "Polyline Dash",
-  "date": 1522199914241,
+  "isNew": false,
   "img": "Polyline Dash.jpg"
 }, {
   "name": "Polyline Volume",
-  "date": 1513581954888,
+  "isNew": false,
   "img": "Polyline Volume.jpg"
 }, {
   "name": "Projection",
-  "date": 1513581954889,
+  "isNew": false,
   "img": "Projection.jpg"
 }, {
   "name": "Rectangle",
-  "date": 1513581954890,
+  "isNew": false,
   "img": "Rectangle.jpg"
 }, {
   "name": "Reverse Geocoder",
-  "date": 1522199914242,
+  "isNew": false,
   "img": "Reverse Geocoder.jpg"
 }, {
   "name": "Rotatable 2D Map",
-  "date": 1513581954891,
+  "isNew": false,
   "img": "Rotatable 2D Map.jpg"
 }, {
   "name": "Scene Rendering Performance",
-  "date": 1522199914242,
+  "isNew": false,
   "img": "Scene Rendering Performance.jpg"
 }, {
   "name": "Sentinel-2",
-  "date": 1522199914244,
+  "isNew": true,
   "img": "Sentinel-2.jpg"
 }, {
   "name": "Shadows",
-  "date": 1522199914245,
+  "isNew": false,
   "img": "Shadows.jpg"
 }, {
   "name": "Show or Hide Entities",
-  "date": 1513581954893,
+  "isNew": false,
   "img": "Show or Hide Entities.jpg"
 }, {
   "name": "Spheres and Ellipsoids",
-  "date": 1513581954894,
+  "isNew": false,
   "img": "Spheres and Ellipsoids.jpg"
 }, {
   "name": "Star Burst",
-  "date": 1513581954895,
+  "isNew": false,
   "img": "Star Burst.jpg"
 }, {
   "name": "Terrain",
-  "date": 1522199914247,
+  "isNew": false,
   "img": "Terrain.jpg"
 }, {
   "name": "Terrain Clipping Planes",
-  "date": 1522199914245,
+  "isNew": false,
   "img": "Terrain Clipping Planes.jpg"
 }, {
   "name": "Terrain Exaggeration",
-  "date": 1522199914246,
+  "isNew": false,
   "img": "Terrain Exaggeration.jpg"
 }, {
   "name": "Video",
-  "date": 1522199914248,
+  "isNew": false,
   "img": "Video.jpg"
 }, {
   "name": "Wall",
-  "date": 1513581954899,
+  "isNew": false,
   "img": "Wall.jpg"
 }, {
   "name": "Washington DC 2017",
-  "date": 1522199914248,
+  "isNew": true,
   "img": "Washington DC 2017.jpg"
 }, {
   "name": "Web Map Service (WMS)",
-  "date": 1513581954899,
+  "isNew": false,
   "img": "Web Map Service (WMS).jpg"
 }, {
   "name": "Web Map Tile Service with Time",
-  "date": 1522199914249,
+  "isNew": false,
   "img": "Web Map Tile Service with Time.jpg"
 }];
+var has_new_gallery_demos = true;
