@@ -94,7 +94,7 @@ var gallery_demos = [{
   "img": "Billboards.jpg"
 }, {
   "name": "Blue Marble",
-  "isNew": true,
+  "isNew": false,
   "img": "Blue Marble.jpg"
 }, {
   "name": "Box",
@@ -214,7 +214,7 @@ var gallery_demos = [{
   "img": "Cesium Widget.jpg"
 }, {
   "name": "Cesium World Terrain",
-  "isNew": true,
+  "isNew": false,
   "img": "Cesium World Terrain.jpg"
 }, {
   "name": "Circles and Ellipses",
@@ -262,7 +262,7 @@ var gallery_demos = [{
   "img": "Distance Display Conditions.jpg"
 }, {
   "name": "Earth at Night",
-  "isNew": true,
+  "isNew": false,
   "img": "Earth at Night.jpg"
 }, {
   "name": "GeoJSON and TopoJSON",
@@ -354,7 +354,7 @@ var gallery_demos = [{
   "img": "Multi-part CZML.jpg"
 }, {
   "name": "Natural Earth II",
-  "isNew": true,
+  "isNew": false,
   "img": "Natural Earth II.jpg"
 }, {
   "name": "Offline",
@@ -426,7 +426,7 @@ var gallery_demos = [{
   "img": "Scene Rendering Performance.jpg"
 }, {
   "name": "Sentinel-2",
-  "isNew": true,
+  "isNew": false,
   "img": "Sentinel-2.jpg"
 }, {
   "name": "Shadows",
@@ -466,7 +466,7 @@ var gallery_demos = [{
   "img": "Wall.jpg"
 }, {
   "name": "Washington DC 2017",
-  "isNew": true,
+  "isNew": false,
   "img": "Washington DC 2017.jpg"
 }, {
   "name": "Web Map Service (WMS)",
