@@ -70,10 +70,14 @@ gl_FragColor.a = 1.0 - (1.0 - insideFaceColor.a) * (1.0 - outsideFaceColor.a);\n
 t = (intersection.start != 0.0) ? intersection.start : intersection.stop;\n\
 vec3 positionEC = czm_pointAlongRay(ray, t);\n\
 vec4 positionCC = czm_projection * vec4(positionEC, 1.0);\n\
+#ifdef LOG_DEPTH\n\
+czm_writeLogDepth(1.0 + positionCC.w);\n\
+#else\n\
 float z = positionCC.z / positionCC.w;\n\
 float n = czm_depthRange.near;\n\
 float f = czm_depthRange.far;\n\
 gl_FragDepthEXT = (z * (f - n) + f + n) * 0.5;\n\
+#endif\n\
 #endif\n\
 #endif\n\
 }\n\

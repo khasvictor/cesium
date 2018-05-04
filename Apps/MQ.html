@@ -25,9 +25,16 @@
     var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
         //dynamicScreenSpaceError:true,
         //loadSiblings:true,
-        maximumScreenSpaceError:64,
-        url : 'http://localhost/d/Scene/tileset.json'//'http://192.168.199.183/3dtiles/osgb/Production_3/scene/Production_3.json'//'http://localhost/Production_4/Scene/Production_4.json'
+        maximumScreenSpaceError:256,
+        url : 'http://192.168.1.6/3dtiles/maqun/maqun/final.json'//'http://localhost/d/Scene/tileset.json'//////'http://192.168.199.183/3dtiles/osgb/Production_3/scene/Production_3.json'//'http://localhost/Production_4/Scene/Production_4.json'
     }));
+
+    tileset.pointCloudShading.maximumAttenuation = 4.0; // Don't allow points larger than 8 pixels.
+    tileset.pointCloudShading.baseResolution = 0.05; // Assume an original capture resolution of 5 centimeters between neighboring points.
+    tileset.pointCloudShading.geometricErrorScale = 1.0; // Applies to both geometric error and the base resolution.
+    tileset.pointCloudShading.attenuation = true;
+    tileset.pointCloudShading.eyeDomeLighting = false;
+
     tileset.readyPromise.then(function() {
         var boundingSphere = tileset.boundingSphere;
         viewer.camera.flyToBoundingSphere(boundingSphere);

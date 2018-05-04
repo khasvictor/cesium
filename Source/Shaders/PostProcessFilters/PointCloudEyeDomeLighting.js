@@ -25,8 +25,6 @@ if (length(ecAlphaDepth.xyz) < czm_epsilon7)\n\
 {\n\
 discard;\n\
 }\n\
-else\n\
-{\n\
 vec4 color = texture2D(u_pointCloud_colorTexture, v_textureCoordinates);\n\
 float distX = u_distancesAndEdlStrength.x;\n\
 float distY = u_distancesAndEdlStrength.y;\n\
@@ -39,8 +37,11 @@ float response = responseAndCount.x / responseAndCount.y;\n\
 float shade = exp(-response * 300.0 * u_distancesAndEdlStrength.z);\n\
 color.rgb *= shade;\n\
 gl_FragColor = vec4(color);\n\
+#ifdef LOG_DEPTH\n\
+czm_writeLogDepth(1.0 + (czm_projection * vec4(ecAlphaDepth.xyz, 1.0)).w);\n\
+#else\n\
 gl_FragDepthEXT = czm_eyeToWindowCoordinates(vec4(ecAlphaDepth.xyz, 1.0)).z;\n\
-}\n\
+#endif\n\
 }\n\
 ";
 });

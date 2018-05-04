@@ -16,6 +16,7 @@ gl_FragColor = vec4(material.diffuse + material.emission, material.alpha);\n\
 #ifdef VECTOR_TILE\n\
 gl_FragColor *= u_highlightColor;\n\
 #endif\n\
+czm_writeLogDepth();\n\
 }\n\
 ";
 });

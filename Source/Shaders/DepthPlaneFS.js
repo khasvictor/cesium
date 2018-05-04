@@ -16,6 +16,7 @@ else\n\
 {\n\
 discard;\n\
 }\n\
+czm_writeLogDepth();\n\
 }\n\
 ";
 });

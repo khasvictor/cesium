@@ -45,6 +45,7 @@ gl_FragColor = v_pickColor;\n\
 #else\n\
 gl_FragColor = color;\n\
 #endif\n\
+czm_writeLogDepth();\n\
 }\n\
 ";
 });

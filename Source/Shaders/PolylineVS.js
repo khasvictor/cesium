@@ -88,6 +88,9 @@ gl_Position = czm_viewportOrthographic * positionWC * show;\n\
 v_st = vec2(texCoord, clamp(expandDir, 0.0, 1.0));\n\
 v_width = width;\n\
 czm_pickColor = pickColor;\n\
+#ifdef LOG_DEPTH\n\
+czm_vertexLogDepth(czm_modelViewProjectionRelativeToEye * p);\n\
+#endif\n\
 }\n\
 ";
 });

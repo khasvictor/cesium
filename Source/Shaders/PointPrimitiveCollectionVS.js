@@ -107,6 +107,9 @@ if (lengthSq < nearSq || lengthSq > farSq) {\n\
 positionEC.xyz = vec3(0.0);\n\
 }\n\
 #endif\n\
+#ifdef LOG_DEPTH\n\
+czm_vertexLogDepth(czm_projection * positionEC);\n\
+#endif\n\
 vec4 positionWC = czm_eyeToWindowCoordinates(positionEC);\n\
 gl_Position = czm_viewportOrthographic * vec4(positionWC.xy, -positionWC.z, 1.0);\n\
 #ifdef DISABLE_DEPTH_DISTANCE\n\
@@ -122,6 +125,9 @@ bool clipped = (zclip < -1.0 || zclip > 1.0);\n\
 if (!clipped && (disableDepthTestDistance < 0.0 || (lengthSq > 0.0 && lengthSq < disableDepthTestDistance)))\n\
 {\n\
 gl_Position.z = -gl_Position.w;\n\
+#ifdef LOG_DEPTH\n\
+czm_vertexLogDepth(vec4(czm_currentFrustum.x));\n\
+#endif\n\
 }\n\
 }\n\
 #endif\n\

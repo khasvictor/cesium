@@ -138,6 +138,7 @@ vec3 normalEC = czm_normal3D * normalMC;\n\
 vec2 waterMaskTranslation = u_waterMaskTranslationAndScale.xy;\n\
 vec2 waterMaskScale = u_waterMaskTranslationAndScale.zw;\n\
 vec2 waterMaskTextureCoordinates = v_textureCoordinates.xy * waterMaskScale + waterMaskTranslation;\n\
+waterMaskTextureCoordinates.y = 1.0 - waterMaskTextureCoordinates.y;\n\
 float mask = texture2D(u_waterMask, waterMaskTextureCoordinates).r;\n\
 if (mask > 0.0)\n\
 {\n\

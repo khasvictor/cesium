@@ -36,7 +36,7 @@ const float SHIFT_RIGHT5 = 1.0 / 32.0;\n\
 const float SHIFT_RIGHT3 = 1.0 / 8.0;\n\
 const float SHIFT_RIGHT2 = 1.0 / 4.0;\n\
 const float SHIFT_RIGHT1 = 1.0 / 2.0;\n\
-vec4 computePositionWindowCoordinates(vec4 positionEC, vec2 imageSize, float scale, vec2 direction, vec2 origin, vec2 translate, vec2 pixelOffset, vec3 alignedAxis, bool validAlignedAxis, float rotation, bool sizeInMeters)\n\
+vec4 addScreenSpaceOffset(vec4 positionEC, vec2 imageSize, float scale, vec2 direction, vec2 origin, vec2 translate, vec2 pixelOffset, vec3 alignedAxis, bool validAlignedAxis, float rotation, bool sizeInMeters)\n\
 {\n\
 vec2 halfSize = imageSize * scale * czm_resolutionScale * 0.5;\n\
 halfSize *= ((direction * 2.0) - 1.0);\n\
@@ -61,19 +61,19 @@ if (sizeInMeters)\n\
 {\n\
 positionEC.xy += halfSize;\n\
 }\n\
-vec4 positionWC = czm_eyeToWindowCoordinates(positionEC);\n\
-if (sizeInMeters)\n\
-{\n\
-originTranslate /= czm_metersPerPixel(positionEC);\n\
-}\n\
-positionWC.xy += originTranslate;\n\
+float mpp = czm_metersPerPixel(positionEC);\n\
 if (!sizeInMeters)\n\
 {\n\
-positionWC.xy += halfSize;\n\
+originTranslate *= mpp;\n\
 }\n\
-positionWC.xy += translate;\n\
-positionWC.xy += (pixelOffset * czm_resolutionScale);\n\
-return positionWC;\n\
+positionEC.xy += originTranslate;\n\
+if (!sizeInMeters)\n\
+{\n\
+positionEC.xy += halfSize * mpp;\n\
+}\n\
+positionEC.xy += translate * mpp;\n\
+positionEC.xy += (pixelOffset * czm_resolutionScale) * mpp;\n\
+return positionEC;\n\
 }\n\
 void main()\n\
 {\n\
@@ -199,9 +199,12 @@ if (lengthSq < nearSq || lengthSq > farSq)\n\
 positionEC.xyz = vec3(0.0);\n\
 }\n\
 #endif\n\
-vec4 positionWC = computePositionWindowCoordinates(positionEC, imageSize, scale, direction, origin, translate, pixelOffset, alignedAxis, validAlignedAxis, rotation, sizeInMeters);\n\
-gl_Position = czm_viewportOrthographic * vec4(positionWC.xy, -positionWC.z, 1.0);\n\
+positionEC = addScreenSpaceOffset(positionEC, imageSize, scale, direction, origin, translate, pixelOffset, alignedAxis, validAlignedAxis, rotation, sizeInMeters);\n\
+gl_Position = czm_projection * positionEC;\n\
 v_textureCoordinates = textureCoordinates;\n\
+#ifdef LOG_DEPTH\n\
+czm_vertexLogDepth();\n\
+#endif\n\
 #ifdef DISABLE_DEPTH_DISTANCE\n\
 float disableDepthTestDistance = distanceDisplayConditionAndDisableDepth.z;\n\
 if (disableDepthTestDistance == 0.0 && czm_minimumDisableDepthTestDistance != 0.0)\n\
@@ -215,6 +218,9 @@ bool clipped = (zclip < -1.0 || zclip > 1.0);\n\
 if (!clipped && (disableDepthTestDistance < 0.0 || (lengthSq > 0.0 && lengthSq < disableDepthTestDistance)))\n\
 {\n\
 gl_Position.z = -gl_Position.w;\n\
+#ifdef LOG_DEPTH\n\
+czm_vertexLogDepth(vec4(czm_currentFrustum.x));\n\
+#endif\n\
 }\n\
 }\n\
 #endif\n\

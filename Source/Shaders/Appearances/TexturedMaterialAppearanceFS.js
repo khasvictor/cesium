@@ -7,7 +7,7 @@ varying vec2 v_st;\n\
 void main()\n\
 {\n\
 vec3 positionToEyeEC = -v_positionEC;\n\
-vec3 normalEC = normalize(v_normalEC);;\n\
+vec3 normalEC = normalize(v_normalEC);\n\
 #ifdef FACE_FORWARD\n\
 normalEC = faceforward(normalEC, vec3(0.0, 0.0, 1.0), -normalEC);\n\
 #endif\n\
