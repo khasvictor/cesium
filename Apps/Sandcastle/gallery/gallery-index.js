@@ -254,7 +254,7 @@ var gallery_demos = [{
   "img": "Cylinders and Cones.jpg"
 }, {
   "name": "DataSource Ordering",
-  "isNew": true,
+  "isNew": false,
   "img": "DataSource Ordering.jpg"
 }, {
   "name": "Distance Display Conditions",
@@ -350,7 +350,7 @@ var gallery_demos = [{
   "img": "Materials.jpg"
 }, {
   "name": "Multi-part CZML",
-  "isNew": true,
+  "isNew": false,
   "img": "Multi-part CZML.jpg"
 }, {
   "name": "Natural Earth II",
@@ -372,6 +372,14 @@ var gallery_demos = [{
   "name": "Particle System Fireworks",
   "isNew": false,
   "img": "Particle System Fireworks.jpg"
+}, {
+  "name": "Particle System Tails",
+  "isNew": true,
+  "img": "Particle System Tails.jpg"
+}, {
+  "name": "Particle System Weather",
+  "isNew": true,
+  "img": "Particle System Weather.jpg"
 }, {
   "name": "Physically-Based Materials",
   "isNew": false,
@@ -412,10 +420,6 @@ var gallery_demos = [{
   "name": "Rectangle",
   "isNew": false,
   "img": "Rectangle.jpg"
-}, {
-  "name": "Reverse Geocoder",
-  "isNew": false,
-  "img": "Reverse Geocoder.jpg"
 }, {
   "name": "Rotatable 2D Map",
   "isNew": false,
