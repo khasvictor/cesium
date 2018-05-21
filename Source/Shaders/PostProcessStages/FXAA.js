@@ -2,21 +2,21 @@
 define(function() {
     'use strict';
     return "varying vec2 v_textureCoordinates;\n\
-uniform sampler2D u_texture;\n\
-uniform vec2 u_fxaaQualityRcpFrame;\n\
+uniform sampler2D colorTexture;\n\
 const float fxaaQualitySubpix = 0.5;\n\
 const float fxaaQualityEdgeThreshold = 0.125;\n\
 const float fxaaQualityEdgeThresholdMin = 0.0833;\n\
 void main()\n\
 {\n\
+vec2 fxaaQualityRcpFrame = vec2(1.0) / czm_viewport.zw;\n\
 vec4 color = FxaaPixelShader(\n\
 v_textureCoordinates,\n\
-u_texture,\n\
-u_fxaaQualityRcpFrame,\n\
+colorTexture,\n\
+fxaaQualityRcpFrame,\n\
 fxaaQualitySubpix,\n\
 fxaaQualityEdgeThreshold,\n\
 fxaaQualityEdgeThresholdMin);\n\
-float alpha = texture2D(u_texture, v_textureCoordinates).a;\n\
+float alpha = texture2D(colorTexture, v_textureCoordinates).a;\n\
 gl_FragColor = vec4(color.rgb, alpha);\n\
 }\n\
 ";

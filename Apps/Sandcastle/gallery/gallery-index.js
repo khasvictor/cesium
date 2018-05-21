@@ -1,5 +1,5 @@
 // This file is automatically rebuilt by the Cesium build process.
-var hello_world_index = 74;
+var hello_world_index = 78;
 var gallery_demos = [{
   "name": "3D Models",
   "isNew": false,
@@ -77,6 +77,10 @@ var gallery_demos = [{
   "isNew": false,
   "img": "3D Tiles Terrain Classification.jpg"
 }, {
+  "name": "Ambient Occlusion",
+  "isNew": true,
+  "img": "Ambient Occlusion.jpg"
+}, {
   "name": "ArcGIS MapServer",
   "isNew": false,
   "img": "ArcGIS MapServer.jpg"
@@ -92,6 +96,10 @@ var gallery_demos = [{
   "name": "Billboards",
   "isNew": false,
   "img": "Billboards.jpg"
+}, {
+  "name": "Bloom",
+  "isNew": true,
+  "img": "Bloom.jpg"
 }, {
   "name": "Blue Marble",
   "isNew": false,
@@ -249,6 +257,10 @@ var gallery_demos = [{
   "isNew": false,
   "img": "Custom Geocoder.jpg"
 }, {
+  "name": "Custom Post Process",
+  "isNew": true,
+  "img": "Custom Post Process.jpg"
+}, {
   "name": "Cylinders and Cones",
   "isNew": false,
   "img": "Cylinders and Cones.jpg"
@@ -256,6 +268,10 @@ var gallery_demos = [{
   "name": "DataSource Ordering",
   "isNew": false,
   "img": "DataSource Ordering.jpg"
+}, {
+  "name": "Depth of Field",
+  "isNew": true,
+  "img": "Depth of Field.jpg"
 }, {
   "name": "Distance Display Conditions",
   "isNew": false,
@@ -337,6 +353,10 @@ var gallery_demos = [{
   "isNew": false,
   "img": "Labels.jpg"
 }, {
+  "name": "LensFlare",
+  "isNew": true,
+  "img": "LensFlare.jpg"
+}, {
   "name": "LocalToFixedFrame",
   "isNew": false,
   "img": "LocalToFixedFrame.jpg"
@@ -412,6 +432,10 @@ var gallery_demos = [{
   "name": "Polyline Volume",
   "isNew": false,
   "img": "Polyline Volume.jpg"
+}, {
+  "name": "Post Processing",
+  "isNew": true,
+  "img": "Post Processing.jpg"
 }, {
   "name": "Projection",
   "isNew": false,
