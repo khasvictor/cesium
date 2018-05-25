@@ -27,5 +27,20 @@ q.w = 1.0;\n\
 }\n\
 return q;\n\
 }\n\
+vec4 czm_windowToEyeCoordinates(vec2 fragmentCoordinateXY, float depthOrLogDepth)\n\
+{\n\
+#ifdef LOG_DEPTH\n\
+float near = czm_currentFrustum.x;\n\
+float far = czm_currentFrustum.y;\n\
+float unscaledDepth = pow(2.0, depthOrLogDepth * czm_log2FarPlusOne) - 1.0;\n\
+vec4 windowCoord = vec4(fragmentCoordinateXY, far * (1.0 - near / unscaledDepth) / (far - near), 1.0);\n\
+vec4 eyeCoordinate = czm_windowToEyeCoordinates(windowCoord);\n\
+eyeCoordinate.w = 1.0 / unscaledDepth;\n\
+#else\n\
+vec4 windowCoord = vec4(fragmentCoordinateXY, depthOrLogDepth, 1.0);\n\
+vec4 eyeCoordinate = czm_windowToEyeCoordinates(windowCoord);\n\
+#endif\n\
+return eyeCoordinate;\n\
+}\n\
 ";
 });

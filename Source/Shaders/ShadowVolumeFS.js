@@ -6,15 +6,13 @@ define(function() {
 #endif\n\
 #ifdef VECTOR_TILE\n\
 uniform vec4 u_highlightColor;\n\
-#else\n\
-varying vec4 v_color;\n\
 #endif\n\
 void main(void)\n\
 {\n\
 #ifdef VECTOR_TILE\n\
 gl_FragColor = u_highlightColor;\n\
 #else\n\
-gl_FragColor = v_color;\n\
+gl_FragColor = vec4(1.0);\n\
 #endif\n\
 czm_writeDepthClampedToFarPlane();\n\
 }\n\
