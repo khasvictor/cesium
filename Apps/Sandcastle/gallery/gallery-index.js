@@ -504,5 +504,9 @@ var gallery_demos = [{
   "name": "Web Map Tile Service with Time",
   "isNew": false,
   "img": "Web Map Tile Service with Time.jpg"
+}, {
+  "name": "Z-Indexing Geometry",
+  "isNew": true,
+  "img": "Z-Indexing Geometry.jpg"
 }];
 var has_new_gallery_demos = true;
