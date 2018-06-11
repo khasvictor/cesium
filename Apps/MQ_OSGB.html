@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Use correct character set. -->
+  <meta charset="utf-8">
+  <!-- Tell IE to use the latest, best version. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>Hello World!</title>
+  <script src="../Build/CesiumUnminified/Cesium.js"></script>
+  <style>
+      @import url(../Build/Cesium/Widgets/widgets.css);
+      html, body, #cesiumContainer {
+          width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+      }
+  </style>
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <script>
+    var viewer = new Cesium.Viewer('cesiumContainer');
+    viewer.extend(Cesium.viewerCesiumInspectorMixin);
+    viewer.extend(Cesium.viewerCesium3DTilesInspectorMixin);
+    var tileset = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({
+        //dynamicScreenSpaceError:true,
+        //loadSiblings:true,
+        //maximumScreenSpaceError:2,
+        //maximumMemoryUsage :0,
+        url : 'http://192.168.1.6/3dtiles/test/maqun_test/tileset.json'//'http://localhost/d/Scene/tileset.json'//////'http://192.168.199.183/3dtiles/osgb/Production_3/scene/Production_3.json'//'http://localhost/Production_4/Scene/Production_4.json'
+    }));
+
+    // tileset.pointCloudShading.maximumAttenuation = 4.0; // Don't allow points larger than 8 pixels.
+    // tileset.pointCloudShading.baseResolution = 0.05; // Assume an original capture resolution of 5 centimeters between neighboring points.
+    // tileset.pointCloudShading.geometricErrorScale = 1.0; // Applies to both geometric error and the base resolution.
+    // tileset.pointCloudShading.attenuation = true;
+    // tileset.pointCloudShading.eyeDomeLighting = false;
+
+    tileset.readyPromise.then(function() {
+        var boundingSphere = tileset.boundingSphere;
+        viewer.camera.flyToBoundingSphere(boundingSphere);
+        viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+
+        //viewer.scene.globe.depthTestAgainstTerrain=false;
+    }).otherwise(function(error) {
+        throw(error);
+    });
+  </script>
+</body>
+</html>
