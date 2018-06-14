@@ -394,12 +394,16 @@ var gallery_demos = [{
   "img": "Particle System Fireworks.jpg"
 }, {
   "name": "Particle System Tails",
-  "isNew": true,
+  "isNew": false,
   "img": "Particle System Tails.jpg"
 }, {
   "name": "Particle System Weather",
-  "isNew": true,
+  "isNew": false,
   "img": "Particle System Weather.jpg"
+}, {
+  "name": "Per-Feature Post Processing",
+  "isNew": true,
+  "img": "Per-Feature Post Processing.jpg"
 }, {
   "name": "Physically-Based Materials",
   "isNew": false,

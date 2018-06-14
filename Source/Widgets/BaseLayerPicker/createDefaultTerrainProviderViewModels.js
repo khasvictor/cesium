@@ -40,7 +40,6 @@ define([
             }
         }));
 
-
         providerViewModels.push(new ProviderViewModel({
             name : 'Terrain data courtesy VT MÄK',
             iconUrl : buildModuleUrl('Widgets/Images/TerrainProviders/Ellipsoid.png'),
@@ -52,8 +51,6 @@ define([
                 });
             }
         }));
-
-
         return providerViewModels;
     }
 

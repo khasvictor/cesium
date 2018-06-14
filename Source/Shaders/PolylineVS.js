@@ -16,7 +16,7 @@ attribute vec3 nextPosition2DLow;\n\
 attribute vec4 texCoordExpandAndBatchIndex;\n\
 varying vec2  v_st;\n\
 varying float v_width;\n\
-varying vec4  czm_pickColor;\n\
+varying vec4 v_pickColor;\n\
 varying float v_polylineAngle;\n\
 void main()\n\
 {\n\
@@ -87,7 +87,7 @@ vec4 positionWC = getPolylineWindowCoordinates(p, prev, next, expandDir, width, 
 gl_Position = czm_viewportOrthographic * positionWC * show;\n\
 v_st = vec2(texCoord, clamp(expandDir, 0.0, 1.0));\n\
 v_width = width;\n\
-czm_pickColor = pickColor;\n\
+v_pickColor = pickColor;\n\
 #ifdef LOG_DEPTH\n\
 czm_vertexLogDepth(czm_modelViewProjectionRelativeToEye * p);\n\
 #endif\n\

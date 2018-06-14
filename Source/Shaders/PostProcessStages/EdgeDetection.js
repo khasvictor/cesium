@@ -17,9 +17,30 @@ scalars[1] = 10.0;\n\
 scalars[2] = 3.0;\n\
 float padx = 1.0 / czm_viewport.z;\n\
 float pady = 1.0 / czm_viewport.w;\n\
+#ifdef CZM_SELECTED_FEATURE\n\
+bool selected = false;\n\
+for (int i = 0; i < 3; ++i)\n\
+{\n\
+float dir = directions[i];\n\
+selected = selected || czm_selected(vec2(-padx, dir * pady));\n\
+selected = selected || czm_selected(vec2(padx, dir * pady));\n\
+selected = selected || czm_selected(vec2(dir * padx, -pady));\n\
+selected = selected || czm_selected(vec2(dir * padx, pady));\n\
+if (selected)\n\
+{\n\
+break;\n\
+}\n\
+}\n\
+if (!selected)\n\
+{\n\
+gl_FragColor = vec4(color.rgb, 0.0);\n\
+return;\n\
+}\n\
+#endif\n\
 float horizEdge = 0.0;\n\
 float vertEdge = 0.0;\n\
-for (int i = 0; i < 3; ++i) {\n\
+for (int i = 0; i < 3; ++i)\n\
+{\n\
 float dir = directions[i];\n\
 float scale = scalars[i];\n\
 horizEdge -= texture2D(depthTexture, v_textureCoordinates + vec2(-padx, dir * pady)).x * scale;\n\
@@ -28,8 +49,7 @@ vertEdge -= texture2D(depthTexture, v_textureCoordinates + vec2(dir * padx, -pad
 vertEdge += texture2D(depthTexture, v_textureCoordinates + vec2(dir * padx, pady)).x * scale;\n\
 }\n\
 float len = sqrt(horizEdge * horizEdge + vertEdge * vertEdge);\n\
-float alpha = len > length ? 1.0 : 0.0;\n\
-gl_FragColor = vec4(color.rgb, alpha);\n\
+gl_FragColor = vec4(color.rgb, len > length ? color.a : 0.0);\n\
 }\n\
 ";
 });

@@ -17,11 +17,8 @@ attribute vec3 distanceDisplayConditionAndDisableDepth;\n\
 attribute float a_batchId;\n\
 #endif\n\
 varying vec2 v_textureCoordinates;\n\
-#ifdef RENDER_FOR_PICK\n\
 varying vec4 v_pickColor;\n\
-#else\n\
 varying vec4 v_color;\n\
-#endif\n\
 const float UPPER_BOUND = 32768.0;\n\
 const float SHIFT_LEFT16 = 65536.0;\n\
 const float SHIFT_LEFT8 = 256.0;\n\
@@ -134,12 +131,15 @@ bool validAlignedAxis = (temp - floor(temp)) * SHIFT_LEFT1 > 0.0;\n\
 vec3 alignedAxis = vec3(0.0);\n\
 bool validAlignedAxis = false;\n\
 #endif\n\
-#ifdef RENDER_FOR_PICK\n\
-temp = compressedAttribute2.y;\n\
-#else\n\
-temp = compressedAttribute2.x;\n\
-#endif\n\
+vec4 pickColor;\n\
 vec4 color;\n\
+temp = compressedAttribute2.y;\n\
+temp = temp * SHIFT_RIGHT8;\n\
+pickColor.b = (temp - floor(temp)) * SHIFT_LEFT8;\n\
+temp = floor(temp) * SHIFT_RIGHT8;\n\
+pickColor.g = (temp - floor(temp)) * SHIFT_LEFT8;\n\
+pickColor.r = floor(temp);\n\
+temp = compressedAttribute2.x;\n\
 temp = temp * SHIFT_RIGHT8;\n\
 color.b = (temp - floor(temp)) * SHIFT_LEFT8;\n\
 temp = floor(temp) * SHIFT_RIGHT8;\n\
@@ -148,13 +148,10 @@ color.r = floor(temp);\n\
 temp = compressedAttribute2.z * SHIFT_RIGHT8;\n\
 bool sizeInMeters = floor((temp - floor(temp)) * SHIFT_LEFT7) > 0.0;\n\
 temp = floor(temp) * SHIFT_RIGHT8;\n\
-#ifdef RENDER_FOR_PICK\n\
-color.a = (temp - floor(temp)) * SHIFT_LEFT8;\n\
-vec4 pickColor = color / 255.0;\n\
-#else\n\
+pickColor.a = (temp - floor(temp)) * SHIFT_LEFT8;\n\
+pickColor /= 255.0;\n\
 color.a = floor(temp);\n\
 color /= 255.0;\n\
-#endif\n\
 vec4 p = czm_translateRelativeToEye(positionHigh, positionLow);\n\
 vec4 positionEC = czm_modelViewRelativeToEye * p;\n\
 positionEC = czm_eyeOffset(positionEC, eyeOffset.xyz);\n\
@@ -224,12 +221,9 @@ czm_vertexLogDepth(vec4(czm_currentFrustum.x));\n\
 }\n\
 }\n\
 #endif\n\
-#ifdef RENDER_FOR_PICK\n\
 v_pickColor = pickColor;\n\
-#else\n\
 v_color = color;\n\
 v_color.a *= translucency;\n\
-#endif\n\
 }\n\
 ";
 });
