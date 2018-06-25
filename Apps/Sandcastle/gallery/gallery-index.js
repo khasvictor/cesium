@@ -373,6 +373,10 @@ var gallery_demos = [{
   "isNew": false,
   "img": "Multi-part CZML.jpg"
 }, {
+  "name": "Multiple Synced Views",
+  "isNew": true,
+  "img": "Multiple Synced Views.jpg"
+}, {
   "name": "Natural Earth II",
   "isNew": false,
   "img": "Natural Earth II.jpg"
