@@ -40,7 +40,7 @@ define([
         options = defaultValue(options, defaultValue.EMPTY_OBJECT);
 
         return new CesiumTerrainProvider({
-            url: 'https://assets.agi.com/stk-terrain/v1/tilesets/world/',//IonResource.fromAssetId(1),
+            url: 'https://assets.agi.com/stk-terrain/v1/tilesets/world/tiles',//IonResource.fromAssetId(1),
             requestVertexNormals: defaultValue(options.requestVertexNormals, false),
             requestWaterMask: defaultValue(options.requestWaterMask, false)
         });
